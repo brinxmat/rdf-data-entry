@@ -1,0 +1,27 @@
+<div ng-controller="PaneController">
+        <div class="modal-header">
+            <h3 class="modal-title">Place as subject</h3>
+        </div>
+        <div class="modal-body" ng-controller="GeographicalCtrl as geoCtrl">
+			<div>
+				<div>
+					<form ng-model="poc">
+						<label>Place of creation:<input type="text" ng-model="pas.text" /><button class="btn" ng-click="geoCtrl.search(pas.text)">search</button></label>
+					</form>
+					<div class="resultslist">
+						<ul>
+							<li ng:repeat="item in share.geoPlaces">
+								<div class="result">
+									<span class="btn" ng-click="geoCtrl.addTerm('placeAsSubject', item.geonameId)" value="{{item.geonameId}}">{{item.name}} ({{item.geonameId}})</span> | <a ng-href="http://www.geonames.org/{{item.geonameId}}" target="_">map</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+    		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<div ng-controller="PaneController">
+        <div class="modal-header">
+            <h3 class="modal-title">Add person</h3>
+        </div>
+        <div class="modal-body" ng-controller="PersonController as personCtrl">
+			<div>
+				<div>
+					<form ng-model="poc">
+						<label>Person:<input type="text" ng-model="search.$">
+					    </label>
+					</form>
+					<div class="resultslist">
+						<ul>
+							<li ng:repeat="item in share.people | filter:search:strict">
+								<div class="result">
+									<span ng-click="personCtrl.addTerm('recipient', item.Id)">{{item.Prefix}} {{item.FirstName}} {{item.LastName}} {{item.Suffix}} ({{item.StartDate}} — {{item.EndDate}})</span> | <a ng-href="{{item.DBpedia}}" target="_">DBpedia</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+    		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

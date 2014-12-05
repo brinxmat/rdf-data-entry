@@ -1,0 +1,14 @@
+<!--Form for basic fields for registration-->
+
+<fieldset name="item-description" class="container-fluid form-group" >
+	<label>ID:<input type="text" class="form-control" name="identifier" id="identifier" ng-model="$parent.formdata.identifer" ng-change="$parent.formdata.uri = change.generateUri($parent.formdata.identifer); $parent.formdata.canonicalURI = change.generateCanonicalUri($parent.formdata.identifer)" required /></label><br>
+	<label>URL:<input type="text" class="form-control" name="uri" id="uri" ng-model="$parent.formdata.uri" disabled /></label><br>
+	<label>Object ID:<input type="text" class="form-control" name="objectId" ng-model="$parent.formdata.objectId" /></label><br>
+	<label>Document ID:<input type="text" class="form-control" name="documentID" ng-model="$parent.formdata.documentId" /></label><br>
+	<label>Shelfmark:<input type="text" class="form-control" name="shelfmark" ng-model="$parent.formdata.shelfmark" /></label><br>
+
+	<label>Canonical URI:<input type="text" class="form-control" name="canonicalURI" id="canonicalURI" value="" ng-model="$parent.formdata.canonicalURI" required /></label><br>
+	<label>Cataloguer:<input type="text" class="form-control" name="cataloguer" id="cataloguer" value="" ng-model="$parent.formdata.cataloguer" required /></label><br>
+	<label>Date:<input type="text" class="form-control" ng-model="$parent.formdata.catalogueDate" disabled ng-init="$parent.formdata.catalogueDate = change.todaysDate()" /></label>
+
+</fieldset>

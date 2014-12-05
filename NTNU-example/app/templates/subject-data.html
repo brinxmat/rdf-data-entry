@@ -1,0 +1,13 @@
+<fieldset name="basic-data"  class="container-fluid" ng-controller="PaneController as paneCtrl">
+	<div ng-controller="PersonController as personCtrl">
+		<button class="btn btn-default" ng-click="paneCtrl.open('person-as-subject')">Add person as subject</button>
+		<div>
+			<label>Person as subject:</label><button class="btn" ng-repeat="person in $parent.formdata.personAsSubject" ng-click="personCtrl.removeTerm('personAsSubject',$index)">{{person}}<span class="dismiss">&times;</span></button>
+		</div>
+	</div>
+	<label>Norwegian Keywords:<input class="form-control" type="text" value="" ng-model="$parent.formdata.NorwegianKeywords" /></label><br>
+	<label>LCSH:<input class="form-control" type="text" value="" ng-model="$parent.formdata.LCSH" /></label><br>
+	<label>DDC:<input class="form-control" type="text" value="" ng-model="$parent.formdata.DDC" /></label><br>
+	
+
+</fieldset>
