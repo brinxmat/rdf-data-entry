@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<style>
+	body {position:absolute; left: 0em; top: 0em; width: 100%;}
+	div.formcontainer, fieldset {position: relative; left: 1em; width: 22em; border: 1px solid #ddd;}
+	label {position: relative; left: 1em; width: 100%;}
+	input[type=text] {width: 25em; position: relative; left: 3em;}
+	fieldset {width: 40%; }
+	type-data {width: 120em;}
+	.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+	button {display: inline;}
+	span.dismiss {margin-left:1em; font-weight: bold;}
+	</style>
+
+	<title>Editor: {{formdata.identifier}}</title>
+</head>
+<body ng-controller="EditorController as editorCtrl">
+	<h1>{{formdata.identifier}}</h1>
+	<section>
+		
+		<tabs></tabs>
+	</section>
+	<div class="container-fluid">
+	<form novalidate>
+		<type-data></type-data>
+	</form>
+	</div>
+	<pre>{{formdata | json}}</pre>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+	<script src="app/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+	<script src="app/js/app.js"></script>
+	<script src="app/js/field.module.js"></script>
+		
+    
+</body>
+</html>
